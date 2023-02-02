@@ -12,8 +12,8 @@ export default function Home() {
       <Head>
         <title>Al-Doori</title>
       </Head>
-      {/* Header */}
-        <Header/>
+
+      <Header />
       {/* Hero */}
 
       {/* About */}
