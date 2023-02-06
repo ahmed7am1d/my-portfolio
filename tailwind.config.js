@@ -7,10 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors:{
-        primaryColorDark:'rgb(36, 36, 36)'
-      }
+      colors: {
+        primaryColorDark: "rgb(36, 36, 36)",
+        primaryColorGold: "#F7AB0B",
+        lightCirclesColor:"#333333",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };
