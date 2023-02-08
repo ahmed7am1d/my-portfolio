@@ -18,7 +18,7 @@ const WorkExperience = (props: Props) => {
                  p-10 
                  snap-x snap-mandatory
                  sm:snap-center
-                 sm:snap-mandatory scrollbar-thumb-primaryColorGold scrollbar-w-[20px] scrollbar-thin'>
+                 sm:snap-mandatory scrollbar-thumb-primaryColorGold scrollbar-thin'>
                     <ExperienceCard />
                     <ExperienceCard />
                     <ExperienceCard />

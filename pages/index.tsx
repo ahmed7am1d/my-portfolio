@@ -8,13 +8,15 @@ import About from '@/components/About'
 import WorkExperience from '@/components/WorkExperience'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
+import ContactMe from '@/components/ContactMe'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden z-0 scroll-smooth 
-     scrollbar-thumb-primaryColorGold scrollbar-thin'>
+    <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
+      scroll-smooth 
+     scrollbar-thumb-primaryColorGold scrollbar'>
       <Head>
         <title>Al-Doori</title>
       </Head>
@@ -37,11 +39,13 @@ export default function Home() {
         <Skills />
       </section>
 
-
       <section id='projects' className='pt-[100px] snap-none'>
-        <Projects/>
+        <Projects />
       </section>
-      {/* Contact me */}
+
+      <section id='contact' className='pt-[100px] snap-none'>
+        <ContactMe />
+      </section>
     </div>
   )
 }

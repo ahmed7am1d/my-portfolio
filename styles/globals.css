@@ -9,4 +9,11 @@
   .sectionHeaderTitle {
     @apply uppercase tracking-[20px] text-gray-500 text-2xl text-center;
   }
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b md:px-6 md:py-4 px-4 py-4 border-primaryColorDark text-gray-500
+    placeholder-gray-500 transition-all focus:border-primaryColorGold/40 focus:text-primaryColorGold/30
+  }
+  .formSubmitButton {
+    @apply bg-primaryColorGold md:py-5 md:px-10 py-2 px-6 rounded-md text-black font-bold text-lg
+  }
 }
