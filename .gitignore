@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# Sanity
+al-doori-portofilo/node_modules
+
 # production
 /build
 

@@ -29,7 +29,7 @@ function Header({ }: Props) {
                 <SocialIcon url="https://www.instagram.com/ahmad7am1d/" fgColor="gray" bgColor="transparent" />
                 <SocialIcon url="https://github.com/ahmed7am1d" fgColor="gray" bgColor="transparent" />
             </motion.div>
-            <Link href='#contact'>
+            {/* <Link href='#contact'> */}
                 <motion.div
                     initial={{
                         x: 500,
@@ -55,7 +55,7 @@ function Header({ }: Props) {
                     />
                     <p className='uppercase hidden md:inline-flex text-sm text-gray-400 '>Let`s connect</p>
                 </motion.div>
-            </Link>
+            {/* </Link> */}
         </header>
     )
 }
