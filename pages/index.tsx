@@ -1,3 +1,4 @@
+import React from "react";
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '@/components/Header'
@@ -25,7 +26,7 @@ type Props = {
   socials: Social[];
 }
 
-const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
+const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) =>{
 
   return (
     <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
@@ -62,14 +63,14 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       </section>
 
       {/* Back to home */}
-      {/* <Link href='#hero'>
+      <Link href='#hero'>
         <footer className='sticky bottom-5 w-full cursor-pointer'>
           <div className='flex items-center justify-center'>
             <Image src={ProfilePic} alt='Profile picture' className='h-10 w-10 rounded-full
              filter grayscale hover:grayscale-0' />
           </div>
         </footer>
-      </Link> */}
+      </Link>
     </div>
   )
 }

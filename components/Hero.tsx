@@ -2,6 +2,7 @@
 import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles';
+import Image from 'next/image';
 import Link from 'next/link';
 import { PageInfo } from '@/typings';
 import { urlFor } from '@/sanity';
@@ -28,10 +29,11 @@ const Hero = ({ pageInfo }: Props) => {
          overflow-hidden'>
 
             <BackgroundCircles />
-            <img
+            <Image
                 className='relative rounded-full h-32 w-32 mx-auto object-cover'
                 src={urlFor(pageInfo?.heroImage).url()}
                 alt="Profile picture"
+                height='960' width='960'
             />
 
             <div className='z-20'>

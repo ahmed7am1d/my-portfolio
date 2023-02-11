@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Experience } from '@/typings';
 import { urlFor } from '@/sanity';
 
@@ -18,16 +20,19 @@ const ExperienceCard = ({ experience }: Props) => {
         p-5
         hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 sm:snap-start '>
 
-            <motion.img
+            <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                src={urlFor(experience?.companyImage).url()}
-                className='w-24 h-24 rounded-lg p-2 xl:w-[140px] xl:h-[140px] object-contain object-center bg-primaryColorDark/50'
-                alt="Company image"
-            />
-
+            >
+                <Image className='w-24 h-24 rounded-lg p-2 xl:w-[140px] xl:h-[140px] object-contain object-center bg-primaryColorDark/50'
+                    src={urlFor(experience?.companyImage).url()}
+                    alt='Company image'
+                    height='400'
+                    width='400'
+                />
+            </motion.div>
             <div className='px-0 md:px-5 '>
                 <h4 className='text-2xl font-light'>{experience?.jobTitle}</h4>
                 <p className='font-bold text-xl mt-2' >{experience?.company}</p>
@@ -43,7 +48,7 @@ const ExperienceCard = ({ experience }: Props) => {
                 </div>
                 <p className='uppercase py-5 text-gray-300'>{new Date(experience?.dateStarted).toDateString()} - {experience?.dateEnded ? new Date(experience?.dateEnded).toDateString() : "Present"}</p>
                 <ul className='list-disc space-y-4 m-5  text-sm'>
-                    {experience?.points?.map((point, i) => (
+                    {experience?.points?.map((point,i) => (
                         <li key={i}>{point}</li>
                     ))}
 

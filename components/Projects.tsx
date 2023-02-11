@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Project } from "@/typings";
 import { urlFor } from "@/sanity";
 type Props = {
@@ -27,8 +29,9 @@ const Projects = ({ projects }: Props) => {
                        ">
                             <h3 className="sectionHeaderTitle">Projects</h3>
                             {/* Project Image */}
-                            <motion.img className=" h-fit lg:w-[500px] md:w-[600px] sm:w-[500px]"
-                                src={urlFor(project?.image).url()} alt="mockup" />
+                            <motion.div className="w-fit h-fit" >
+                                <Image src={urlFor(project?.image).url()} alt="mockup" className="w-[400px] lg:w-[500px] md:w-[600px] sm:w-[500px]" width='3000' height='2000' />
+                            </motion.div>
                             {/* DIV [CaseStudy + techs + summary] */}
                             <div className="space-y-10 px-6 md:px-14 max-w-6xl ">
                                 <h4 className=" sm:text-2xl md:text-4xl font-semibold text-center " >
