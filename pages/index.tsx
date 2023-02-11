@@ -18,14 +18,15 @@ import { fetchProjects } from '@/utils/fetchProjects'
 import { fetchSocials } from '@/utils/fetchSocials'
 
 type Props = {
-  pageInfo: PageInfo;
+  //pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
   projects: Project[];
   socials: Social[];
 }
 
-const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
+//const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
+const Home = ({ experiences, projects, skills, socials }: Props) => {
 
   return (
     <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
@@ -37,13 +38,13 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
       <Header socials={socials} />
 
-      <section id='hero'>
+      {/* <section id='hero'>
         <Hero pageInfo={pageInfo} />
       </section>
 
       <section id='about' className='mt-[150px]'>
         <About pageInfo={pageInfo} />
-      </section>
+      </section> */}
 
       <section id='experience' className='mt-[150 px]  snap-none'>
         <WorkExperience experiences={experiences} />
@@ -57,9 +58,9 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <Projects projects={projects} />
       </section>
 
-      <section id='contact' className='mt-[150px] snap-none'>
+      {/* <section id='contact' className='mt-[150px] snap-none'>
         <ContactMe pageInfo={pageInfo} />
-      </section>
+      </section> */}
 
       {/* Back to home */}
       <Link href='#hero'>
@@ -76,7 +77,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
+  //const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
@@ -84,7 +85,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      pageInfo,
+      //pageInfo,
       experiences,
       skills,
       projects,
