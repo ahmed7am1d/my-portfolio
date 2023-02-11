@@ -28,7 +28,7 @@ function Header({ socials }: Props) {
                 className='flex flex-row items-center'>
                 {/* Social icons */}
                 {socials?.map((social) => (
-                    <SocialIcon key={social?._id} url={social?.url} fgColor="gray" bgColor="transparent" />
+                    <SocialIcon key={social?._id} url={social?.url} fgColor="#45A29E" bgColor="transparent" />
                 ))}
 
             </motion.div>
@@ -53,7 +53,7 @@ function Header({ socials }: Props) {
                 <SocialIcon
                     className="cursor-pointer"
                     network="email"
-                    fgColor="gray"
+                    fgColor="#45A29E"
                     bgColor="transparent"
                 />
                 <p className='uppercase hidden md:inline-flex text-sm text-gray-400 '>Let`s connect</p>

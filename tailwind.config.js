@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaryColorDark: "rgb(36, 36, 36)",
-        primaryColorGold: "#F7AB0B",
+        primaryColorDark: "#1F2833",
+        primaryColorBlue: "#66FCF1",
         lightCirclesColor:"#333333",
       },
     },

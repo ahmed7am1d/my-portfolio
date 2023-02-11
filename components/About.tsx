@@ -41,7 +41,7 @@ const About = ({ pageInfo }: Props) => {
                     />
                 </motion.div>
                 <div className='space-y-10 px-0 md:px-10'>
-                    <h4 className="text-4xl font-semibold">Here is a <span className='underline decoration-primaryColorGold/50' >little</span> background</h4>
+                    <h4 className="text-4xl font-semibold">Here is a <span className='underline decoration-primaryColorBlue/50' >little</span> background</h4>
                     <p className='text-base' >{pageInfo?.backgroundInformation}</p>
                 </div>
             </motion.div>

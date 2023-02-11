@@ -52,7 +52,7 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
   return (
     <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
       scroll-smooth
-     scrollbar-thumb-primaryColorGold scrollbar'>
+     scrollbar-thumb-primaryColorBlue scrollbar'>
       <Head>
         <title>Al-Doori</title>
       </Head>

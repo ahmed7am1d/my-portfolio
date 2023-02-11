@@ -21,7 +21,7 @@ const WorkExperience = ({ experiences }: Props) => {
                  p-10
                  snap-x snap-mandatory
                  sm:snap-center
-                 sm:snap-mandatory scrollbar-thumb-primaryColorGold scrollbar-thin'>
+                 sm:snap-mandatory scrollbar-thumb-primaryColorBlue scrollbar-thin'>
                     {experiences?.map((experience) => (
                         <ExperienceCard experience={experience} key={experience?._id} />
                     ))}

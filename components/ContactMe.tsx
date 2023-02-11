@@ -41,24 +41,24 @@ const ContactMe = ({ pageInfo }: Props) => {
                         <h3 className='sectionHeaderTitle'>Contact</h3>
                     </motion.div>
                     <h4 className=" md:text-3xl text-xl font-semibold text-center px-9">Contact me whenever you wish. {" "}
-                        <span className="bg-primaryColorGold/50 md:p-0 ">I have got what you need</span>
+                        <span className="bg-primaryColorBlue/50 md:p-0 ">I have got what you need</span>
                     </h4>
                     <div className="space-y-10">
                         {/* Phone */}
                         <div className="flex items-center space-x-5 justify-center">
-                            <PhoneIcon className="text-primaryColorGold h-7 w-7 animate-pulse" />
+                            <PhoneIcon className="text-primaryColorBlue h-7 w-7 animate-pulse" />
                             <p className="text-base md:text-lg">{pageInfo?.phoneNumber}</p>
                         </div>
 
                         {/*  */}
                         <div className="flex items-center space-x-5 justify-center">
-                            <EnvelopeIcon className="text-primaryColorGold h-7 w-7 animate-pulse" />
+                            <EnvelopeIcon className="text-primaryColorBlue h-7 w-7 animate-pulse" />
                             <p className="text-base md:text-lg">{pageInfo?.email}</p>
                         </div>
 
                         {/* Address */}
                         <div className="flex items-center space-x-5 justify-center">
-                            <MapPinIcon className="text-primaryColorGold h-7 w-7 animate-pulse" />
+                            <MapPinIcon className="text-primaryColorBlue h-7 w-7 animate-pulse" />
                             <p className="text-base md:text-lg">{pageInfo?.address}</p>
                         </div>
                     </div>

@@ -15,7 +15,7 @@ const ExperienceCard = ({ experience }: Props) => {
         md:w-1/2 
         xl:w-1/2
         w-full
-      bg-[#292929]
+      bg-[#0B0C10]
         p-5
         hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 sm:snap-start '>
 

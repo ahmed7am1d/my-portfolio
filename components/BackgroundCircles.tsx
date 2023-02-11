@@ -20,7 +20,7 @@ const BackgroundCircles = () => {
             <div className='absolute border border-lightCirclesColor rounded-full h-[300px] w-[300px] mt-52 ' />
             <div className='absolute border border-lightCirclesColor rounded-full h-[500px] w-[500px] mt-52 ' />
 
-            <div className='absolute border border-primaryColorGold rounded-full h-[650px] w-[650px] mt-52 animate-pulse opacity-20' />
+            <div className='absolute border border-primaryColorBlue rounded-full h-[650px] w-[650px] mt-52 animate-pulse opacity-20' />
             <div className='absolute border border-lightCirclesColor rounded-full h-[800px] w-[800px] mt-52 ' />
         </motion.div>
     )
