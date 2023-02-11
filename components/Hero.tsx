@@ -1,15 +1,22 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles';
 import Image from 'next/image';
 import ProfilePicture from '../public/Images/profilePicture.jpg'
 import Link from 'next/link';
-type Props = {}
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
+import imageUrlBuilder from '@sanity/image-url'
 
-const Hero = (props: Props) => {
+type Props = {
+    pageInfo: PageInfo;
+}
+
+const Hero = ({ pageInfo }: Props) => {
     const [text, count] = useTypewriter({
         words: [
-            "Ahoj, It Is Ahmed Al-Doori"
+            `Ahoj, It Is ${pageInfo?.name}`
             , "Guy-who-loves-weightLifting.jsx"
             , "<ButLovesToCodeMore/>"],
         loop: true,
@@ -26,10 +33,13 @@ const Hero = (props: Props) => {
             <BackgroundCircles />
             <Image
                 className='relative rounded-full h-32 w-32 mx-auto object-cover'
-                src={ProfilePicture}
-                alt="Profile picture" placeholder='blur' />
+                src={urlFor(pageInfo?.heroImage).url()}
+                alt="Profile picture"
+                height='960' width='960'
+            />
+
             <div className='z-20'>
-                <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Software Engineer</h2>
+                <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2>
                 <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
                     <span className='mr-3'>{text}</span>
                     <Cursor cursorColor='#F7AB0A' />

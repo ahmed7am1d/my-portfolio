@@ -1,11 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import blogicImage from '../public/Images/blogicImage.jpg'
 import { SocialIcon } from 'react-social-icons';
+import { Experience } from '@/typings';
+import { urlFor } from '@/sanity';
 
-type Props = {}
+type Props = {
+    experience: Experience;
+}
 
-const ExperienceCard = (props: Props) => {
+const ExperienceCard = ({ experience }: Props) => {
     return (
         <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 
         sm:w-fit
@@ -22,24 +27,33 @@ const ExperienceCard = (props: Props) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
             >
-                <Image className='w-24 h-24 rounded-full xl:w-[140px] xl:h-[140px] object-cover object-center'
-                    src={blogicImage}
-                    alt='blogic selfie'
+                <Image className='w-24 h-24 rounded-lg p-2 xl:w-[140px] xl:h-[140px] object-contain object-center bg-primaryColorDark/50'
+                    src={urlFor(experience?.companyImage).url()}
+                    alt='Company image'
+                    height='400'
+                    width='400'
                 />
             </motion.div>
             <div className='px-0 md:px-5 '>
-                <h4 className='text-2xl font-light'>Software Engineer</h4>
-                <p className='font-bold text-xl mt-1' ><span className=' text-orange-700'>b</span>logic</p>
-                <div className='flex space-x-2 my-2'>
-                    <SocialIcon url="https://twitter.com/aldooriDEV" fgColor="gray" bgColor="transparent" className='h-10 w-10 ' />
-                    <SocialIcon url="https://twitter.com/aldooriDEV" fgColor="gray" bgColor="transparent" className='h-10 w-10 ' />
-                    <SocialIcon url="https://twitter.com/aldooriDEV" fgColor="gray" bgColor="transparent" className='h-10 w-10 ' />
+                <h4 className='text-2xl font-light'>{experience?.jobTitle}</h4>
+                <p className='font-bold text-xl mt-2' >{experience?.company}</p>
+                <div className='flex space-x-2 my-2 mt-3'>
+                    {experience?.technologies.map((tech) => (
+                        <img
+                            className='h-10 w-10 rounded-full'
+                            key={tech?._id}
+                            src={urlFor(tech?.image).url()}
+                            alt={tech?.title}
+                            
+                        />
+                    ))}
                 </div>
-                <p className='uppercase py-5 text-gray-300'>Started work... - Ended...</p>
+                <p className='uppercase py-5 text-gray-300'>{new Date(experience?.dateStarted).toDateString()} - {experience?.dateEnded ? new Date(experience?.dateEnded).toDateString() : "Present"}</p>
                 <ul className='list-disc space-y-4 m-5  text-sm'>
-                    <li>First month there was as internship. In the first month I built E-Shop using ASP.NET MVC.</li>
-                    <li>Then I worked with developing and maintaining ASP.NET Core APIs solutions.</li>
-                    <li>It was such great experience as it was my first job in my field.</li>
+                    {experience?.points.map((point,i) => (
+                        <li key={i}>{point}</li>
+                    ))}
+
                 </ul>
             </div>
         </article>

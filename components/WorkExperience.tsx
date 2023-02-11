@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import ExperienceCard from './ExperienceCard'
-type Props = {}
+import { Experience } from '@/typings'
+type Props = {
+    experiences: Experience[];
+}
 
-const WorkExperience = (props: Props) => {
+const WorkExperience = ({ experiences }: Props) => {
     return (
 
         <div>
@@ -19,9 +22,9 @@ const WorkExperience = (props: Props) => {
                  snap-x snap-mandatory
                  sm:snap-center
                  sm:snap-mandatory scrollbar-thumb-primaryColorGold scrollbar-thin'>
-                    <ExperienceCard />
-                    <ExperienceCard />
-                    <ExperienceCard />
+                    {experiences?.map((experience) => (
+                        <ExperienceCard experience={experience} key={experience._id} />
+                    ))}
                 </div>
             </motion.div>
         </div>

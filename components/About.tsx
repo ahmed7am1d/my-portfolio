@@ -1,9 +1,13 @@
 import Image from 'next/image';
 import profilPicAbout from '../public/Images/profilePicAbout.jpg';
 import { motion } from 'framer-motion';
-type Props = {}
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
+type Props = {
+    pageInfo: PageInfo;
+}
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
     return (
 
         <>
@@ -30,14 +34,16 @@ const About = (props: Props) => {
                     transition={{ duration: 1.2 }}
                 >
 
-                    <Image src={profilPicAbout} alt='About profile picture'
+                    <Image src={urlFor(pageInfo?.profilePic).url()} alt='About profile picture'
                         className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
                 md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
+                        height='960'
+                        width='1280'
                     />
                 </motion.div>
                 <div className='space-y-10 px-0 md:px-10'>
-                    <h4 className="text-4xl font-semibold">Here is <span className='underline decoration-primaryColorGold/50' >little</span> background</h4>
-                    <p className='text-base' >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem at quod quia. Quam minus, repellendus delectus ipsum praesentium, numquam id quae asperiores provident adipisci quas beatae. Ea vero explicabo neque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad odio aspernatur illum eveniet, provident qui unde a officiis aut saepe maiores voluptatum, blanditiis nesciunt debitis quidem ex culpa, porro eligendi.</p>
+                    <h4 className="text-4xl font-semibold">Here is a <span className='underline decoration-primaryColorGold/50' >little</span> background</h4>
+                    <p className='text-base' >{pageInfo?.backgroundInformation}</p>
                 </div>
             </motion.div>
         </>
