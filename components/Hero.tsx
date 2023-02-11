@@ -3,18 +3,16 @@ import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles';
 import Image from 'next/image';
-import ProfilePicture from '../public/Images/profilePicture.jpg'
 import Link from 'next/link';
 import { PageInfo } from '@/typings';
 import { urlFor } from '@/sanity';
-import imageUrlBuilder from '@sanity/image-url'
 
 type Props = {
     pageInfo: PageInfo;
 }
 
 const Hero = ({ pageInfo }: Props) => {
-    const [text, count] = useTypewriter({
+    const [text] = useTypewriter({
         words: [
             `Ahoj, It Is ${pageInfo?.name}`
             , "Guy-who-loves-weightLifting.jsx"

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import profilPicAbout from '../public/Images/profilePicAbout.jpg';
 import { motion } from 'framer-motion';
 import { PageInfo } from '@/typings';
 import { urlFor } from '@/sanity';

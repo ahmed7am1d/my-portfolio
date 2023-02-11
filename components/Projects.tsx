@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
 import Image from "next/image";
-import mockup from '../public/Images/443-4437837_responsive-images-laptop-tablet-smartphone-png.png'
 import { Project } from "@/typings";
 import { urlFor } from "@/sanity";
 type Props = {
@@ -24,7 +23,7 @@ const Projects = ({ projects }: Props) => {
                 h-full
                 z-0">
                 <div className="w-full h-full relative flex overflow-y-hidden overflow-x-scroll snap-x snap-mandatory z-20 scrollbar-thumb-primaryColorGold scrollbar-thin">
-                    {projects.map((project, i) => (
+                    {projects?.map((project, i) => (
                         <div key={i} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center
                        ">
                             <h3 className="sectionHeaderTitle">Projects</h3>
@@ -40,7 +39,7 @@ const Projects = ({ projects }: Props) => {
                                     {project?.title}
                                 </h4>
                                 <div className="flex items-center justify-center space-x-1">
-                                    {project?.technologies.map((tech) => (
+                                    {project?.technologies?.map((tech) => (
                                         <img
                                             className="h-10 w-10"
                                             key={tech?._id}

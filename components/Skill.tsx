@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import NextJSLogo from "../public/Images/nextjs-boilerplate-logo.png"
-import ReactJSLogo from '../public/Images/React-icon.svg.png'
 import { Skill } from "@/typings";
 import { urlFor } from "@/sanity";
 type Props = {

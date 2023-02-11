@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import blogicImage from '../public/Images/blogicImage.jpg'
-import { SocialIcon } from 'react-social-icons';
 import { Experience } from '@/typings';
 import { urlFor } from '@/sanity';
 
@@ -38,7 +36,7 @@ const ExperienceCard = ({ experience }: Props) => {
                 <h4 className='text-2xl font-light'>{experience?.jobTitle}</h4>
                 <p className='font-bold text-xl mt-2' >{experience?.company}</p>
                 <div className='flex flex-wrap space-x-2 my-2 mt-3'>
-                    {experience?.technologies.map((tech) => (
+                    {experience?.technologies?.map((tech) => (
                         <img
                             className='h-10 w-10 rounded-full'
                             key={tech?._id}
@@ -49,7 +47,7 @@ const ExperienceCard = ({ experience }: Props) => {
                 </div>
                 <p className='uppercase py-5 text-gray-300'>{new Date(experience?.dateStarted).toDateString()} - {experience?.dateEnded ? new Date(experience?.dateEnded).toDateString() : "Present"}</p>
                 <ul className='list-disc space-y-4 m-5  text-sm'>
-                    {experience?.points.map((point,i) => (
+                    {experience?.points?.map((point,i) => (
                         <li key={i}>{point}</li>
                     ))}
 
