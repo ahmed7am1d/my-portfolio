@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { PhoneIcon, MapIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/solid';
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from "@/typings";
 
 type Inputs = {
     name: string;
@@ -9,28 +10,36 @@ type Inputs = {
     message: string;
 };
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo;
+}
 
-const ContactMe = (props: Props) => {
+const ContactMe = ({ pageInfo }: Props) => {
     const { register, handleSubmit } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = (formData) => {
-       // window.location.href = `mailto:ahmadhamidty@gmail.com?subject=${formData.subject}&
+        // window.location.href = `mailto:ahmadhamidty@gmail.com?subject=${formData.subject}&
         //body=Hi, my name is ${formData.name}. ${formData.message}`;
     };
 
     return (
         <>
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1.5 }}
-            >
-                <h3 className='sectionHeaderTitle'>Contact</h3>
-            </motion.div>
-
-            <div className="h-screen flex relative flex-col text-center pb-36 md:pb-0
-            md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
+            <div className="h-full
+            flex relative flex-col justify-evenly items-center text-center
+            md:pb-0
+            px-10
+            mb-28
+            md:text-left
+            md:flex-row
+            max-w-7xl
+            mx-auto">
                 <div className="flex flex-col space-y-10">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 1.5 }}
+                    >
+                        <h3 className='sectionHeaderTitle'>Contact</h3>
+                    </motion.div>
                     <h4 className=" md:text-3xl text-xl font-semibold text-center px-9">Contact me whenever you wish. {" "}
                         <span className="bg-primaryColorGold/50 md:p-0 ">I have got what you need</span>
                     </h4>
@@ -38,19 +47,19 @@ const ContactMe = (props: Props) => {
                         {/* Phone */}
                         <div className="flex items-center space-x-5 justify-center">
                             <PhoneIcon className="text-primaryColorGold h-7 w-7 animate-pulse" />
-                            <p className="text-base md:text-lg">+420 777 452 023</p>
+                            <p className="text-base md:text-lg">{pageInfo?.phoneNumber}</p>
                         </div>
 
                         {/*  */}
                         <div className="flex items-center space-x-5 justify-center">
                             <EnvelopeIcon className="text-primaryColorGold h-7 w-7 animate-pulse" />
-                            <p className="text-base md:text-lg">ahmadhamidty@gmail.com</p>
+                            <p className="text-base md:text-lg">{pageInfo?.email}</p>
                         </div>
 
                         {/* Address */}
                         <div className="flex items-center space-x-5 justify-center">
                             <MapPinIcon className="text-primaryColorGold h-7 w-7 animate-pulse" />
-                            <p className="text-base md:text-lg">nám. T. G. Masaryka 3050</p>
+                            <p className="text-base md:text-lg">{pageInfo?.address}</p>
                         </div>
                     </div>
 

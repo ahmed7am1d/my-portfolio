@@ -45,25 +45,26 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
         <Hero pageInfo={pageInfo} />
       </section>
 
-      <section id='about' className='pt-[100px]'>
+      <section id='about' className='mt-[150px]'>
         <About pageInfo={pageInfo} />
       </section>
 
-      <section id='experience' className='pt-[100 px]  snap-none'>
+      <section id='experience' className='mt-[150 px]  snap-none'>
         <WorkExperience experiences={experiences} />
       </section>
 
-      <section id='skills' className='pt-[100px] snap-none'>
-        <Skills skills={skills}/>
+      <section id='skills' className='mt-[150px] snap-none'>
+        <Skills skills={skills} />
       </section>
 
-      <section id='projects' className='pt-[100px] snap-none'>
-        <Projects />
+      <section id='projects' className='mt-[150px] snap-none'>
+        <Projects projects={projects} />
       </section>
 
-      <section id='contact' className='pt-[100px] snap-none'>
-        <ContactMe />
+      <section id='contact' className='mt-[150px] snap-none'>
+        <ContactMe pageInfo={pageInfo} />
       </section>
+
       <Link href='#hero'>
         <footer className='sticky bottom-5 w-full cursor-pointer'>
           <div className='flex items-center justify-center'>
