@@ -25,29 +25,7 @@ type Props = {
   socials: Social[];
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
-  return {
-    props: {
-      pageInfo,
-      experiences,
-      skills,
-      projects,
-      socials
-    },
-    //Next.js will attempt to re-generate the page
-    // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 10,
-  }
-}
-
-
-export default function Home({ pageInfo, experiences, projects, skills, socials }: Props) {
+const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
   return (
     <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
@@ -95,4 +73,26 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
     </div>
   )
 }
+export default Home;
 
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
+
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      skills,
+      projects,
+      socials,
+    },
+    // NEXT.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 10,
+  };
+};
