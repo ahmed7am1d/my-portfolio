@@ -15,8 +15,8 @@ const Skill = ({ skill, directionLeft }: Props) => {
                     x: directionLeft ? -200 : 200,
                     opacity: 0
                 }}
-                transition={{ duration: 1 }}
-                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 className=" rounded-full border border-gray-500 object-contain 
                 p-2
