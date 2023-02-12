@@ -26,52 +26,60 @@ type Props = {
   socials: Social[];
 }
 
-const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) =>{
+const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
   return (
-    <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
+    <>
+      <Head>
+        <meta
+          name="description"
+          content="Discover the portfolio of experienced software engineer, Ahmed Hamid Taha Al-Doori. Specializing in developing innovative and efficient software solutions, Al-Doori's portfolio showcases a range of diverse projects that demonstrate his expertise and passion for coding, Al-Doori's work showcases his technical skills and ability to create solutions that meet clients' needs. Explore the portfolio now at al-doori.ml and see how Al-Doori can help bring your software vision to life."
+        />
+      </Head>
+      <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
       scroll-smooth
      scrollbar-thumb-primaryColorBlue scrollbar'>
-      <Head>
-        <title>Al-Doori</title>
-      </Head>
+        <Head>
+          <title>Al-Doori</title>
+        </Head>
 
-      <Header socials={socials} />
+        <Header socials={socials} />
 
-      <section id='hero'>
-        <Hero pageInfo={pageInfo} />
-      </section>
+        <section id='hero'>
+          <Hero pageInfo={pageInfo} />
+        </section>
 
-      <section id='about' className='mt-[150px]'>
-        <About pageInfo={pageInfo} />
-      </section>
+        <section id='about' className='mt-[150px]'>
+          <About pageInfo={pageInfo} />
+        </section>
 
-      <section id='experience' className='mt-[150 px]  snap-none'>
-        <WorkExperience experiences={experiences} />
-      </section>
+        <section id='experience' className='mt-[150 px]  snap-none'>
+          <WorkExperience experiences={experiences} />
+        </section>
 
-      <section id='skills' className='mt-[150px] snap-none'>
-        <Skills skills={skills} />
-      </section>
+        <section id='skills' className='mt-[150px] snap-none'>
+          <Skills skills={skills} />
+        </section>
 
-      <section id='projects' className='mt-[150px] snap-none'>
-        <Projects projects={projects} />
-      </section>
+        <section id='projects' className='mt-[150px] snap-none'>
+          <Projects projects={projects} />
+        </section>
 
-      <section id='contact' className='mt-[150px] snap-none'>
-        <ContactMe pageInfo={pageInfo} />
-      </section>
+        <section id='contact' className='mt-[150px] snap-none'>
+          <ContactMe pageInfo={pageInfo} />
+        </section>
 
-      {/* Back to home */}
-      <Link href='#hero'>
-        <footer className='sticky bottom-5 w-full cursor-pointer'>
-          <div className='flex items-center justify-center'>
-            <Image src={ProfilePic} alt='Profile picture' className='h-10 w-10 rounded-full
+        {/* Back to home */}
+        <Link href='#hero'>
+          <footer className='sticky bottom-5 w-full cursor-pointer'>
+            <div className='flex items-center justify-center'>
+              <Image src={ProfilePic} alt='Profile picture' className='h-10 w-10 rounded-full
              filter grayscale hover:grayscale-0' />
-          </div>
-        </footer>
-      </Link>
-    </div>
+            </div>
+          </footer>
+        </Link>
+      </div>
+    </>
   )
 }
 
