@@ -27,6 +27,7 @@ const Skills = ({ skills }: Props) => {
         xl:space-y-0
         max-w-[2000px]
         mx-auto
+        sm:flex-shrink-1
         mt-[90px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
