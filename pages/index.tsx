@@ -31,10 +31,13 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
     <>
       <Head>
+        <meta charSet="UTF-8" />
         <meta
           name="description"
           content="Discover the portfolio of experienced software engineer, Ahmed Hamid Taha Al-Doori. Specializing in developing innovative and efficient software solutions, Al-Doori's portfolio showcases a range of diverse projects that demonstrate his expertise and passion for coding, Al-Doori's work showcases his technical skills and ability to create solutions that meet clients' needs. Explore the portfolio now at al-doori.ml and see how Al-Doori can help bring your software vision to life."
         />
+        <meta name="author" content="Ahmed Hamid Al-Doori" />
+        <meta name="keywords" content="Software engineer, Web developer, ReactJS, NextJS " />
       </Head>
       <div className='bg-primaryColorDark text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
       scroll-smooth
